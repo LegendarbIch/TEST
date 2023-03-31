@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="java">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Downloads/gson-master.zip!/gson-master/gson/src/test/java" />
+    </SOURCES>
+  </library>
+</component>
