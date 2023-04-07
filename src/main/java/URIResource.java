@@ -13,7 +13,7 @@ public class URIResource {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        URI uri = URI.create("https://ipwhois.app/json/95.32.34.223?lang=ru");
+        URI uri = URI.create("https://cbr.ru/scripts/XML_daily.asp");
 
         HttpRequest.Builder requestBuilder = HttpRequest.newBuilder();
 
