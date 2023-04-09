@@ -1,4 +1,4 @@
-package testexpresion;
+package testLinkedLists;
 
 public class SinglyLinkedList<E> {
      static class Node<E>  {

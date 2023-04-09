@@ -1,4 +1,6 @@
-import Entity.Human;
+package httpTraining;
+
+import httpTraining.entity.Human;
 import com.google.gson.*;
 public class jsonCock {
     Human human = new Human(18L, "Боб", 20);

@@ -1,6 +1,9 @@
+package httpTraining;
+
+import httpTraining.HHTTPCOCK;
+import httpTraining.jsonCock;
+
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
 
 public class test {
     public static void main(String args[]) throws IOException {

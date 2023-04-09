@@ -1,3 +1,5 @@
+package httpTraining;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
@@ -13,7 +15,7 @@ public class URIResource {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        URI uri = URI.create("https://cbr.ru/scripts/XML_daily.asp");
+        URI uri = URI.create("https://yandex.ru/search/?text=пожиратель+душ+аниме&lr=193&clid=2270455&win=588");
 
         HttpRequest.Builder requestBuilder = HttpRequest.newBuilder();
 
@@ -24,7 +26,6 @@ public class URIResource {
 
         HttpClient client = HttpClient.newHttpClient();
 
-
         try {
             HttpResponse.BodyHandler<String> handler = HttpResponse.BodyHandlers.ofString();
             HttpResponse<String> response = client.send(request, handler);
@@ -33,6 +34,7 @@ public class URIResource {
 
             if(status >= 200 && status <= 299) {
                 System.out.println("Сервер успешно обработал запрос. Код состояния " + status);
+                System.out.println(response.body());
                 JsonElement jsonElement = JsonParser.parseString(response.body());
                 if(!jsonElement.isJsonObject()) {
                     System.out.println("Ответ от сервера не соответствует");

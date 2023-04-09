@@ -29,7 +29,7 @@ public class Valute {
                 ", numCode=" + numCode + "\n" +
                 ", charCode='" + charCode + '\n' +
                 ", nominal=" + nominal + "\n" +
-                ", name='" + name.getBytes(StandardCharsets.UTF_8) + '\n' +
+                ", name=" + name + '\n' +
                 ", value=" + value +
                 '}';
     }

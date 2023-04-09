@@ -1,4 +1,4 @@
-package Entity;
+package httpTraining.entity;
 
 public class Human {
     public Long getBebraSize() {

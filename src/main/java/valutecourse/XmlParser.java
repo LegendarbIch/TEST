@@ -9,6 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Date;
 import java.util.Optional;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -16,11 +17,12 @@ import java.util.stream.Collectors;
 public class XmlParser<T> {
     public static void main(String[] args) throws IOException, JAXBException {
         XmlParser<ValCurs> parser = new XmlParser<>();
-        Scanner scanner = new Scanner(System.in);
-        String date = scanner.nextLine();
-        String url = "https://cbr.ru/scripts/XML_daily.asp?date_req=" +date;
-        ValCurs valCurs = parser.xmlParser(ValCurs.class, url);
-        System.out.print(valCurs.getValute().get(0).getName() + " = " + valCurs.getValute().get(0).getValue());
+//        Scanner scanner = new Scanner(System.in);
+//        String date = scanner.nextLine();
+//        String url = "https://cbr.ru/scripts/XML_daily.asp?date_req=" +date;
+//        ValCurs valCurs = parser.xmlParser(ValCurs.class, url);
+//        System.out.print(valCurs.getValute().get(0).getName() + " = " + valCurs.getValute().get(0).getValue());
+        System.out.print(parser.xmlParser(ValCurs.class,"https://www.cbr.ru/scripts/XML_daily.asp"));
     }
 
     public Optional<String> getXMLResponse(String url) throws MalformedURLException {
@@ -28,9 +30,9 @@ public class XmlParser<T> {
         try {
             HttpURLConnection httpConn = (HttpURLConnection) new URL(url).openConnection();
 
-            BufferedReader rd = new BufferedReader(new InputStreamReader(httpConn.getInputStream(), StandardCharsets.UTF_8));
+            BufferedReader rd = new BufferedReader(new InputStreamReader(httpConn.getInputStream()));
 
-            return Optional.of(rd.lines().collect(Collectors.joining(System.lineSeparator())));
+            return Optional.of(rd.lines().collect(Collectors.joining()));
 
         }catch (Exception e) {
             e.printStackTrace();

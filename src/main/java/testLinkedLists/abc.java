@@ -1,4 +1,4 @@
-package testexpresion;
+package testLinkedLists;
 
 import java.util.*;
 
