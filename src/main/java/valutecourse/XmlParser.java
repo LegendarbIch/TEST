@@ -1,20 +1,16 @@
 package valutecourse;
 
 
-import com.sun.net.httpserver.HttpServer;
-import com.sun.xml.bind.v2.runtime.output.Encoded;
-import httpTraining.HelloHandler;
+
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.*;
 import java.net.*;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.util.Date;
+
 import java.util.Optional;
-import java.util.Scanner;
+
 import java.util.stream.Collectors;
 
 public class XmlParser<T> {

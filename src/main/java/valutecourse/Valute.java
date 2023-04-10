@@ -4,8 +4,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Valute {

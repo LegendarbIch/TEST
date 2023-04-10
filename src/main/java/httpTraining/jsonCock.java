@@ -1,8 +1,10 @@
 package httpTraining;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import httpTraining.entity.Human;
-import com.google.gson.*;
-public class JsonSerializer {
+
+public class jsonCock {
     Human human = new Human(18L, "Боб", 20);
     Gson gson = new Gson();
     GsonBuilder gsonBuilder = new GsonBuilder();
