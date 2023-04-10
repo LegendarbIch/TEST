@@ -1,15 +1,12 @@
 package httpTraining;
 
-import httpTraining.HHTTPCOCK;
-import httpTraining.jsonCock;
-
 import java.io.IOException;
 
 public class test {
     public static void main(String args[]) throws IOException {
-        HHTTPCOCK hhttpcock = new HHTTPCOCK();
+        HttpServerCreate hhttpcock = new HttpServerCreate();
         hhttpcock.getServer();
-        jsonCock jsonCock = new jsonCock();
-        jsonCock.show();
+        //JsonSerializer JsonSerializer = new JsonSerializer();
+        //JsonSerializer.show();
     }
 }

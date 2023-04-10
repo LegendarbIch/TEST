@@ -1,17 +1,14 @@
 package httpTraining;
 
-import com.sun.net.httpserver.HttpServer;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 
-public class HHTTPCOCK {
+public class HttpServerCreate {
 
     public void getServer() throws IOException {
-        HttpServer httpServer = HttpServer.create();
-        httpServer.bind(new InetSocketAddress(8080), 0);
+        com.sun.net.httpserver.HttpServer httpServer = com.sun.net.httpserver.HttpServer.create();
+        httpServer.bind(new InetSocketAddress(7071), 0);
         httpServer.createContext("/bebra", new HelloHandler());
         httpServer.start();
-        System.out.println(httpServer.getAddress());
     }
 }
