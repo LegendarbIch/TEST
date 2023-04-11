@@ -1,10 +1,17 @@
 package valutecourse.repository;
 
+import valutecourse.ConnectionManager;
 import valutecourse.entity.Valute;
 
+import java.sql.Connection;
 import java.util.List;
 
 public class PostgresValuteDao implements ValuteDao{
+
+    public PostgresValuteDao(){
+        Connection conn = ConnectionManager.getConnection();
+    }
+
     @Override
     public void addValute(Valute valute) {
 

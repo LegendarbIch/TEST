@@ -11,7 +11,7 @@ public class ConnectionManager {
         if (connection == null) {
             try {
                 Class.forName("org.postgresql.Driver");
-                String url = "jdbc:postgresql://localhost:5432/";
+                String url = "jdbc:postgresql://localhost:5432/ExchangeRatesCbr";
                 String user = "postree";
                 String password = "123";
                 connection = DriverManager.getConnection(url, user, password);
