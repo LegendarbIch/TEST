@@ -3,13 +3,13 @@ package valutecourse;
 
 
 
+import valutecourse.entity.ValCurs;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.*;
 import java.net.*;
-
-import java.util.Optional;
 
 import java.util.stream.Collectors;
 
@@ -27,21 +27,6 @@ public class XmlParser<T> {
 //        httpServer.start();
 
         System.out.print(parser.xmlParser(ValCurs.class, "https://www.cbr.ru/scripts/XML_daily.asp"));
-    }
-
-    public Optional<String> getXMLResponse(String url) throws MalformedURLException {
-        StringBuilder stringBuilder = new StringBuilder();
-        try {
-            HttpURLConnection httpConn = (HttpURLConnection) new URL(url).openConnection();
-
-            BufferedReader rd = new BufferedReader(new InputStreamReader(httpConn.getInputStream()));
-
-            return Optional.of(rd.lines().collect(Collectors.joining()));
-
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-        return Optional.empty();
     }
 
 

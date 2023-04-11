@@ -1,4 +1,4 @@
-package valutecourse;
+package valutecourse.entity;
 
 import javax.xml.bind.annotation.*;
 import java.util.List;
