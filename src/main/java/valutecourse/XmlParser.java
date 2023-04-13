@@ -4,6 +4,8 @@ package valutecourse;
 
 
 import valutecourse.entity.ValCurs;
+import valutecourse.entity.Valute;
+import valutecourse.repository.PostgresValuteDao;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -11,11 +13,13 @@ import javax.xml.bind.Unmarshaller;
 import java.io.*;
 import java.net.*;
 
+import java.sql.SQLException;
 import java.util.stream.Collectors;
 
 public class XmlParser<T> {
-    public static void main(String[] args) throws IOException, JAXBException {
+    public static void main(String[] args) throws IOException, JAXBException, SQLException {
         XmlParser<ValCurs> parser = new XmlParser<>();
+        PostgresValuteDao pvd = new PostgresValuteDao();
 //        Scanner scanner = new Scanner(System.in);
 //        String date = scanner.nextLine();
 //        String url = "https://cbr.ru/scripts/XML_daily.asp?date_req=" +date;
@@ -25,8 +29,12 @@ public class XmlParser<T> {
 //        httpServer.bind(new InetSocketAddress(9090), 0);
 //        httpServer.createContext("/bebra", new HelloHandler());
 //        httpServer.start();
-
-        System.out.print(parser.xmlParser(ValCurs.class, "https://www.cbr.ru/scripts/XML_daily.asp"));
+        ValCurs course = parser.xmlParser(ValCurs.class, "https://www.cbr.ru/scripts/XML_daily.asp");
+        for (Valute val:
+             course.getValute()) {
+            pvd.addValute(val);
+        }
+        System.out.print(course);
     }
 
 

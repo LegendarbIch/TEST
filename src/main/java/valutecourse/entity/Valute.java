@@ -52,7 +52,7 @@ public class Valute {
         return name;
     }
 
-    public String getValue() {
-        return value;
+    public Double getValue() {
+        return Double.valueOf(value.replace(",", "."));
     }
 }

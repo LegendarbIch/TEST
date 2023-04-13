@@ -12,7 +12,7 @@ public class ConnectionManager {
             try {
                 Class.forName("org.postgresql.Driver");
                 String url = "jdbc:postgresql://localhost:5432/ExchangeRatesCbr";
-                String user = "postree";
+                String user = "postgres";
                 String password = "123";
                 connection = DriverManager.getConnection(url, user, password);
             } catch (ClassNotFoundException | SQLException e) {
