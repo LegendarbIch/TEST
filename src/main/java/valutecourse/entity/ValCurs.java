@@ -7,7 +7,7 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ValCurs {
 
-    @XmlAttribute(name = "Data")
+    @XmlAttribute(name = "Date")
     private String data;
 
     @XmlAttribute(name = "name")

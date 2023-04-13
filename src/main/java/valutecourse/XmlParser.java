@@ -5,6 +5,7 @@ package valutecourse;
 
 import valutecourse.entity.ValCurs;
 import valutecourse.entity.Valute;
+import valutecourse.repository.PostgresValCursDao;
 import valutecourse.repository.PostgresValuteDao;
 
 import javax.xml.bind.JAXBContext;
@@ -20,20 +21,19 @@ public class XmlParser<T> {
     public static void main(String[] args) throws IOException, JAXBException, SQLException {
         XmlParser<ValCurs> parser = new XmlParser<>();
         PostgresValuteDao pvd = new PostgresValuteDao();
+        PostgresValCursDao pvcd = new PostgresValCursDao();
 //        Scanner scanner = new Scanner(System.in);
 //        String date = scanner.nextLine();
 //        String url = "https://cbr.ru/scripts/XML_daily.asp?date_req=" +date;
 //        ValCurs valCurs = parser.xmlParser(ValCurs.class, url);
 //        System.out.print(valCurs.getValute().get(0).getName() + " = " + valCurs.getValute().get(0).getValue());
-//        com.sun.net.httpserver.HttpServer httpServer = com.sun.net.httpserver.HttpServer.create();
-//        httpServer.bind(new InetSocketAddress(9090), 0);
-//        httpServer.createContext("/bebra", new HelloHandler());
-//        httpServer.start();
+
         ValCurs course = parser.xmlParser(ValCurs.class, "https://www.cbr.ru/scripts/XML_daily.asp");
-        for (Valute val:
-             course.getValute()) {
-            pvd.addValute(val);
-        }
+//        for (Valute val:
+//             course.getValute()) {
+//            pvd.addValute(val);
+//        }
+        pvcd.addValCurs(course);
         System.out.print(course);
     }
 
