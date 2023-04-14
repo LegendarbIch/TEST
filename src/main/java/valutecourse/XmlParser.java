@@ -20,7 +20,6 @@ import java.util.stream.Collectors;
 public class XmlParser<T> {
     public static void main(String[] args) throws IOException, JAXBException, SQLException {
         XmlParser<ValCurs> parser = new XmlParser<>();
-        PostgresValuteDao pvd = new PostgresValuteDao();
         PostgresValCursDao pvcd = new PostgresValCursDao();
 //        Scanner scanner = new Scanner(System.in);
 //        String date = scanner.nextLine();

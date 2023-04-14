@@ -9,9 +9,9 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class PostgresValCursDao {
+public class PostgresValCursDao implements ValCursDao{
 
-    private Connection connection;
+    private final Connection connection;
 
     private final ObjectJsonConverter<ValCurs> jsonConverter = new ObjectJsonConverter<>();
 
@@ -22,7 +22,8 @@ public class PostgresValCursDao {
     public void addValCurs(ValCurs valCurs){
         try {
             PreparedStatement ps = connection.prepareStatement("INSERT INTO valutecurs (date, valute) VALUES (?,?::json)");
-            ps.setDate(1, Date.valueOf("2023-04-13"));
+            System.out.println(valCurs.getDate());
+            ps.setDate(1, Date.valueOf(valCurs.getDate()));
             ps.setString(2, jsonConverter.convertToJson(valCurs));
             ps.executeUpdate();
         } catch (SQLException e) {

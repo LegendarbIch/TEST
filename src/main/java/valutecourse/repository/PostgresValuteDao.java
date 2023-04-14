@@ -6,15 +6,12 @@ import valutecourse.entity.ValCurs;
 import valutecourse.entity.Valute;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.util.Calendar;
 import java.util.List;
 
 public class PostgresValuteDao implements ValuteDao{
-    private Connection connection;
+    private final Connection connection;
     private PreparedStatement ps;
 
     private final ObjectJsonConverter<ValCurs> jsonConverter = new ObjectJsonConverter<>();
