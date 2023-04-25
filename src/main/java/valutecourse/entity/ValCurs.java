@@ -1,5 +1,7 @@
 package valutecourse.entity;
 
+import com.google.gson.annotations.Expose;
+
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
@@ -7,26 +9,27 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ValCurs {
 
-    @XmlAttribute(name = "Data")
-    private String data;
+    @XmlAttribute(name = "Date")
+    private String date;
 
     @XmlAttribute(name = "name")
     private String name;
 
+    @Expose
     @XmlElement(name = "Valute")
     private List<Valute> valute;
 
     @Override
     public String toString() {
         return "ValCurs{" +
-                "data='" + data + '\'' +
+                "data='" + date + '\'' +
                 ", name='" + name + '\'' +
                 ", valute=" + valute +
                 '}';
     }
 
-    public String getData() {
-        return data;
+    public String getDate() {
+        return date.subSequence(6,10) + "-" + date.subSequence(3, 5) + "-" + date.subSequence(0, 2);
     }
 
     public String getName() {
