@@ -18,24 +18,6 @@ import java.sql.SQLException;
 import java.util.stream.Collectors;
 
 public class XmlParser<T> {
-    public static void main(String[] args) throws IOException, JAXBException, SQLException {
-        XmlParser<ValCurs> parser = new XmlParser<>();
-        PostgresValCursDao pvcd = new PostgresValCursDao();
-//        Scanner scanner = new Scanner(System.in);
-//        String date = scanner.nextLine();
-//        String url = "https://cbr.ru/scripts/XML_daily.asp?date_req=" +date;
-//        ValCurs valCurs = parser.xmlParser(ValCurs.class, url);
-//        System.out.print(valCurs.getValute().get(0).getName() + " = " + valCurs.getValute().get(0).getValue());
-
-        ValCurs course = parser.xmlParser(ValCurs.class, "https://www.cbr.ru/scripts/XML_daily.asp");
-//        for (Valute val:
-//             course.getValute()) {
-//            pvd.addValute(val);
-//        }
-        pvcd.addValCurs(course);
-        System.out.print(course);
-    }
-
 
     public T xmlParser(Class<T> obj, String url) throws IOException, JAXBException {
         HttpURLConnection httpConn = (HttpURLConnection) new URL(url).openConnection();
