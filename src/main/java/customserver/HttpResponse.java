@@ -8,7 +8,7 @@ public class HttpResponse {
 
     private final Map<String, String> headers = new HashMap<>();
 
-    private String body = "<html><body><h1>LALALA</h1></body></html>";
+    private String body = "";
 
     private int statusCode = 200;
     private String status = "OK";

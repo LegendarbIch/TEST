@@ -67,6 +67,7 @@ class Server {
                     if (body != null && !body.isBlank()) {
                         if (httpResponse.getHeaders().get("Content-Type") == null) {
                             httpResponse.addHeader("Content-Type", "text/html; charset=utf-228");
+                            httpResponse.addHeader("Method", httpRequest.getMethod().name());
                         }
                         httpResponse.setBody(body);
                     }
